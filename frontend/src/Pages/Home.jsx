@@ -87,7 +87,7 @@ const Home = () => {
 
   const getProducts = async () => {
     try {
-      const url = "http://localhost:8080/products/";
+      const url = "https://deploy-mern-app-api-nine.vercel.app/products/";
       const token = localStorage.getItem("token");
       // console.log("Token: ", token);
       if (!token) {

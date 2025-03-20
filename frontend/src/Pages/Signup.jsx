@@ -17,7 +17,7 @@ const Signup = () => {
     }
     try {
       const response = await axios.post(
-        "http://localhost:8080/auth/register",
+        "https://deploy-mern-app-api-nine.vercel.app/auth/register",
         {
           name,
           email,
