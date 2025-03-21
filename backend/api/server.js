@@ -38,7 +38,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Connect DB
-connectDB().catch(err => console.error("DB Connection Failed:", err));
+connectDB().catch((err) => console.error("DB Connection Failed:", err));
 
 // Routes
 app.use("/api/auth", authRoute);
@@ -46,6 +46,10 @@ app.use("/api/products", prodRoute);
 
 app.get("/hello", (req, res) => {
   res.send("world");
+});
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ message: "Internal Server Error" });
 });
 
 // ✅ Export as serverless function (No app.listen)
