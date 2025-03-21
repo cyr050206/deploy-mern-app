@@ -41,8 +41,8 @@ app.use(cors());
 connectDB().catch(err => console.error("DB Connection Failed:", err));
 
 // Routes
-app.use("/auth", authRoute);
-app.use("/products", prodRoute);
+app.use("/api/auth", authRoute);
+app.use("/api/products", prodRoute);
 
 app.get("/hello", (req, res) => {
   res.send("world");
